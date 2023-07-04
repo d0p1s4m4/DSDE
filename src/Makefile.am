@@ -1,0 +1,1 @@
+SUBDIRS = dsfm dsterm dswm
