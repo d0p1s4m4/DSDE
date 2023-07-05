@@ -4,6 +4,8 @@
 #include <string.h>
 #include <libgen.h>
 #include <X11/Xlib.h>
+#include <locale.h>
+#include <libintl.h>
 #include "dsde_config.h"
 #include "dswm.h"
 
@@ -101,6 +103,11 @@ main(int argc, char **argv)
 	}
 
 	prg_name = basename(argv[0]);
+	
+	setlocale(LC_ALL, "");
+	bindtextdomain(PACKAGE, LOCALEDIR);
+	textdomain(PACKAGE);
+
 	parse_cli(argc - 1, argv + 1);
 	
 	wm_initalize(opt_disp);

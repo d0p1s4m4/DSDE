@@ -28,6 +28,9 @@ AC_CHECK_INCLUDES_DEFAULT
 AC_C_CONST
 AC_CHECK_TYPE(size_t)
 
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION(0.16)
+
 dnl +---------------------------+
 dnl | Check xlib availability   |
 dnl +---------------------------+
@@ -61,7 +64,7 @@ case "$with_dtk" in
 		LIBDTK_PATH="-L$with_dtk/lib"
 		CFLAGS="-I$with_dtk/include $CFLAGS"
 		LIBS="$LIBS $LIBDTK_PATH"
-esac	
+esac
 ])
 
 AC_CHECK_HEADERS([dtk.h], [], [
